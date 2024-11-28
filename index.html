@@ -1,5 +1,155 @@
-<html>
-  <head>
-    <p>Hello World</p>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nipun Golla's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+        .hidden {
+            display: none;
+        }
+        .scroll-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .scroll-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-zinc-100 text-zinc-900 transition-colors duration-500 ease-in-out" id="body">
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="fixed top-4 left-4 z-10 p-2 rounded-full shadow-lg bg-zinc-200 text-zinc-800 hover:bg-zinc-300 transition-all duration-300">
+        🌙
+    </button>
+
+    <!-- Header -->
+    <header class="py-20 text-center shadow-md bg-indigo-600 text-white">
+        <h1 class="text-4xl font-bold mb-4">Your Name</h1>
+        <p class="text-xl opacity-80">Software Developer & Electronics Enthusiast</p>
+    </header>
+
+    <!-- Contact Links -->
+    <div class="fixed top-4 right-4 flex space-x-4 z-10">
+        <a href="https://github.com/Thinkingaboutcoding/" class="text-zinc-700 hover:text-indigo-600 transition-all duration-300" aria-label="Link to my GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12c0 4.41 3.58 8 8 8 4.42 0 8-3.59 8-8 0-5.52-4.48-10-10-10zm1 14.93c-1.06.42-2.2.65-3.41.65-1.23 0-2.35-.23-3.41-.65a1.996 1.996 0 01-1.46-1.85c0-.63.29-1.19.74-1.56a5.992 5.992 0 004.13-5.56c0-.61.03-1.21.09-1.79a2.003 2.003 0 011.76-1.93c1.06-.42 2.2-.65 3.41-.65s2.35.23 3.41.65c.84.33 1.5 1.08 1.76 1.93.06.58.09 1.18.09 1.79a5.992 5.992 0 004.13 5.56c.45.37.74.93.74 1.56 0 .84-.57 1.56-1.46 1.85z" /></svg>
+        </a>
+    </div>
+
+    <!-- Languages Section -->
+    <section class="scroll-section p-8 transition-all duration-1000">
+        <h2 class="text-3xl font-bold mb-6">Languages</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                        <span>Python</span>
+                        <span>90% (Certified)</span>
+                    </div>
+                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
+                        <div class="h-2 rounded-full bg-indigo-600" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                        <span>HTML</span>
+                        <span>80% (Certified)</span>
+                    </div>
+                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
+                        <div class="h-2 rounded-full bg-indigo-600" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                        <span>C</span>
+                        <span>85% (Certified)</span>
+                    </div>
+                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
+                        <div class="h-2 rounded-full bg-indigo-600" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-2">
+                        <span>Java</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
+                        <div class="h-2 rounded-full bg-indigo-600" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Spoken Languages</h3>
+                <ul class="space-y-2">
+                    <li class="p-2 rounded hover:bg-zinc-100">English (Second Language)</li>
+                    <li class="p-2 rounded hover:bg-zinc-100">German (C1)</li>
+                    <li class="p-2 rounded hover:bg-zinc-100">Telugu (Native)</li>
+                    <li class="p-2 rounded hover:bg-zinc-100">French (A2)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="scroll-section p-8 transition-all duration-1000">
+        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-lg shadow-md bg-white text-zinc-800">
+                <h3 class="text-xl font-semibold mb-4">Arduino Projects</h3>
+                <p class="mb-4 opacity-80">Designed and built circuits with Arduino, working with various sensors like temperature, distance, and light to create interactive projects.</p>
+                <a href="#" class="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700">View on GitHub</a>
+            </div>
+            <div class="p-6 rounded-lg shadow-md bg-white text-zinc-800">
+                <h3 class="text-xl font-semibold mb-4">Java Projects Completed in My Free Time</h3>
+                <p class="mb-4 opacity-80">Engaged in various Java projects that enhance my programming skills and understanding of software development </p>
+                <a href="#" class="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-zinc-800 text-white">
+        <p>© 2024 Nipun Golla All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.getElementById('body');
+        const sections = document.querySelectorAll('.scroll-section');
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('bg-zinc-900');
+            body.classList.toggle('text-white');
+            toggleButton.classList.toggle('bg-zinc-700');
+            toggleButton.classList.toggle('text-amber-400');
+            toggleButton.classList.toggle('hover:bg-zinc-600');
+        });
+
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            sections.forEach(section => {
+                if (scrollPosition > section.offsetTop + 100) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
 </html>
