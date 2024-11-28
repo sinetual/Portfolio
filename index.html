@@ -1,155 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nipun Golla's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nipun Golla - MERN Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
-            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.2s;
         }
-        code {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+        body {
+            font-family: "Ubuntu Mono", sans-serif;
+            background: #030303;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        .hidden {
-            display: none;
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
         }
-        .scroll-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+
+        header h1 {
+            font-size: 3rem;
+            color: #00f7ff;
         }
-        .scroll-section.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 80px 10px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+
+        .section_title {
+            font-size: 3rem;
+            color: #00f7ff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section_title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: #fff;
+            transform: scaleX(0);
+            transition: all 0.3s;
+        }
+
+        .section_title:hover::after {
+            transform: scaleX(1);
+        }
+
+        .section_info {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .portfolio_item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #00f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        .portfolio_item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .portfolio_item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .portfolio_item h4 {
+            font-size: 1.5rem;
+            color: #00f7ff;
+            margin: 10px 0;
+        }
+
+        .portfolio_item button {
+            background: #00f7ff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #030303;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .portfolio_item button:hover {
+            background: #25afff;
+        }
+
+        footer {
+            background: #02000a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Custom Cursor */
+        #cursor_outer {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+            z-index: 9999;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid #00f7ff;
+            box-shadow: 0px 0px 5px #00c3ff;
+            transform: translate(-50%, -50%);
+            transition: all 0.225s linear;
+            pointer-events: none;
+        }
+
+        #cursor_inner {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+            z-index: 9999;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00f7ff;
+            transform: translate(-50%, -50%);
+            transition: all 0.1s linear;
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="bg-zinc-100 text-zinc-900 transition-colors duration-500 ease-in-out" id="body">
+<body>
 
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="fixed top-4 left-4 z-10 p-2 rounded-full shadow-lg bg-zinc-200 text-zinc-800 hover:bg-zinc-300 transition-all duration-300">
-        🌙
-    </button>
-
-    <!-- Header -->
-    <header class="py-20 text-center shadow-md bg-indigo-600 text-white">
-        <h1 class="text-4xl font-bold mb-4">Your Name</h1>
-        <p class="text-xl opacity-80">Software Developer & Electronics Enthusiast</p>
+    <header>
+        <h1>Nipun Golla</h1>
+        <p>MERN Stack Developer</p>
     </header>
 
-    <!-- Contact Links -->
-    <div class="fixed top-4 right-4 flex space-x-4 z-10">
-        <a href="https://github.com/Thinkingaboutcoding/" class="text-zinc-700 hover:text-indigo-600 transition-all duration-300" aria-label="Link to my GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12c0 4.41 3.58 8 8 8 4.42 0 8-3.59 8-8 0-5.52-4.48-10-10-10zm1 14.93c-1.06.42-2.2.65-3.41.65-1.23 0-2.35-.23-3.41-.65a1.996 1.996 0 01-1.46-1.85c0-.63.29-1.19.74-1.56a5.992 5.992 0 004.13-5.56c0-.61.03-1.21.09-1.79a2.003 2.003 0 011.76-1.93c1.06-.42 2.2-.65 3.41-.65s2.35.23 3.41.65c.84.33 1.5 1.08 1.76 1.93.06.58.09 1.18.09 1.79a5.992 5.992 0 004.13 5.56c.45.37.74.93.74 1.56 0 .84-.57 1.56-1.46 1.85z" /></svg>
-        </a>
-    </div>
+    <section>
+        <h2 class="section_title">About Me</h2>
+        <p class="section_info">I am a passionate MERN stack developer with experience in building dynamic web applications.</p>
+    </section>
 
-    <!-- Languages Section -->
-    <section class="scroll-section p-8 transition-all duration-1000">
-        <h2 class="text-3xl font-bold mb-6">Languages</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
-                <div class="mb-4">
-                    <div class="flex justify-between mb-2">
-                        <span>Python</span>
-                        <span>90% (Certified)</span>
-                    </div>
-                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
-                        <div class="h-2 rounded-full bg-indigo-600" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between mb-2">
-                        <span>HTML</span>
-                        <span>80% (Certified)</span>
-                    </div>
-                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
-                        <div class="h-2 rounded-full bg-indigo-600" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between mb-2">
-                        <span>C</span>
-                        <span>85% (Certified)</span>
-                    </div>
-                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
-                        <div class="h-2 rounded-full bg-indigo-600" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between mb-2">
-                        <span>Java</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="h-2 rounded-full overflow-hidden bg-zinc-200">
-                        <div class="h-2 rounded-full bg-indigo-600" style="width: 65%;"></div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Spoken Languages</h3>
-                <ul class="space-y-2">
-                    <li class="p-2 rounded hover:bg-zinc-100">English (Second Language)</li>
-                    <li class="p-2 rounded hover:bg-zinc-100">German (C1)</li>
-                    <li class="p-2 rounded hover:bg-zinc-100">Telugu (Native)</li>
-                    <li class="p-2 rounded hover:bg-zinc-100">French (A2)</li>
-                </ul>
-            </div>
+    <section>
+        <h2 class="section_title">Skills</h2>
+        <p class="section_info">JavaScript, React, Node.js, Express, MongoDB, HTML, CSS</p>
+    </section>
+
+    <section>
+        <h2 class="section_title">Portfolio</h2>
+        <div class="portfolio_item">
+            <img src="project1.jpg" alt="Project 1" />
+            <h4>Project 1</h4>
+            <button>View Project</button>
+        </div>
+        <div class="portfolio_item">
+            <img src="project2.jpg" alt="Project 2" />
+            <h4>Project 2</h4>
+            <button>View Project</button>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="scroll-section p-8 transition-all duration-1000">
-        <h2 class="text-3xl font-bold mb-6">Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-6 rounded-lg shadow-md bg-white text-zinc-800">
-                <h3 class="text-xl font-semibold mb-4">Arduino Projects</h3>
-                <p class="mb-4 opacity-80">Designed and built circuits with Arduino, working with various sensors like temperature, distance, and light to create interactive projects.</p>
-                <a href="#" class="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700">View on GitHub</a>
-            </div>
-            <div class="p-6 rounded-lg shadow-md bg-white text-zinc-800">
-                <h3 class="text-xl font-semibold mb-4">Java Projects Completed in My Free Time</h3>
-                <p class="mb-4 opacity-80">Engaged in various Java projects that enhance my programming skills and understanding of software development </p>
-                <a href="#" class="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700">View on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 text-center bg-zinc-800 text-white">
-        <p>© 2024 Nipun Golla All Rights Reserved.</p>
+    <footer>
+        <p>&copy; 2024 Nipun Golla. All rights reserved.</p>
     </footer>
 
-    <script>
-        const toggleButton = document.getElementById('darkModeToggle');
-        const body = document.getElementById('body');
-        const sections = document.querySelectorAll('.scroll-section');
+    <div id="cursor_outer"></div>
+    <div id="cursor_inner"></div>
 
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('bg-zinc-900');
-            body.classList.toggle('text-white');
-            toggleButton.classList.toggle('bg-zinc-700');
-            toggleButton.classList.toggle('text-amber-400');
-            toggleButton.classList.toggle('hover:bg-zinc-600');
+    <script>
+        const cursorOuter = document.getElementById('cursor_outer');
+        const cursorInner = document.getElementById('cursor_inner');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorOuter.style.top = `${e.clientY}px`;
+            cursorOuter.style.left = `${e.clientX}px`;
+            cursorInner.style.top = `${e.clientY}px`;
+            cursorInner.style.left = `${e.clientX}px`;
         });
 
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight;
-            sections.forEach(section => {
-                if (scrollPosition > section.offsetTop + 100) {
-                    section.classList.add('visible');
-                }
-            });
-        };
+        document.addEventListener('mouseenter', () => {
+            cursorOuter.style.display = 'block';
+            cursorInner.style.display = 'block';
+        });
 
-        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('mouseleave', () => {
+            cursorOuter.style.display = 'none';
+            cursorInner.style.display = 'none';
+        });
     </script>
 </body>
 </html>
