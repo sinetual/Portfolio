@@ -97,14 +97,29 @@
         }
 
         .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
             margin: 10px 0;
         }
 
+        .progress-label {
+            width: 150px; /* Adjust width as needed */
+            text-align: left;
+            margin-right: 10px;
+        }
+
         .progress-bar {
+            flex-grow: 1;
             height: 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
             border-radius: 5px;
             background: #00f7ff;
             transition: width 0.4s ease;
@@ -138,7 +153,7 @@
 
         #cursor_inner {
             position: fixed;
-            top: -9999px;
+            top: -9999 px;
             left: -9999px;
             z-index: 9999;
             width: 10px;
@@ -147,7 +162,7 @@
             background: #00f7ff;
             transform: translate(-50%, -50%);
             transition: all 0.1s linear;
- pointer-events: none;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -163,16 +178,28 @@
         <h2 class="section_title">Programming Skills</h2>
         <p class="section_info"><strong>Languages:</strong></p>
         <div class="progress-container">
-            <div class="progress-bar" style="width: 80%;">HTML (80% with certificate)</div>
+            <div class="progress-label">HTML</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%;">(80% with certificate)</div>
+            </div>
         </div>
         <div class="progress-container">
-            <div class="progress-bar" style="width: 65%;">Java (60-70%)</div>
+            <div class="progress-label">Java</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%;">(60-70%)</div>
+            </div>
         </div>
         <div class="progress-container">
-            <div class="progress-bar" style="width: 90%;">Python (90%+ with certificate)</div>
+            <div class="progress-label">Python</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%;">(90%+ with certificate)</div>
+            </div>
         </div>
         <div class="progress-container">
-            <div class="progress-bar" style="width: 80%;">C (80%+ with certificate)</div>
+            <div class="progress-label">C</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%;">(80%+ with certificate)</div>
+            </div>
         </div>
     </section>
 
@@ -240,11 +267,19 @@
             if (isGerman) {
                 languageSwitch.textContent = "Switch to English";
                 document.querySelector('.section_title').textContent = "Informatikkenntnisse";
-                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
-                document.querySelectorAll('.progress-bar')[0].textContent = "HTML (80% mit Zertifikat)";
-                document.querySelectorAll('.progress-bar')[1].textContent = "Java (60-70%)";
-                document.querySelectorAll('.progress-bar')[2].textContent = "Python (90%+ mit Zertifikat)";
-                document.querySelectorAll('.progress-bar')[3].textContent = "C (80%+ mit Zertifikat)";
+                document .querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
+                document.querySelectorAll('.progress-label')[0].textContent = "HTML";
+                document.querySelectorAll('.progress-fill')[0].style.width = "80%";
+                document.querySelectorAll('.progress-fill')[0].textContent = "(80% mit Zertifikat)";
+                document.querySelectorAll('.progress-label')[1].textContent = "Java";
+                document.querySelectorAll('.progress-fill')[1].style.width = "65%";
+                document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
+                document.querySelectorAll('.progress-label')[2].textContent = "Python";
+                document.querySelectorAll('.progress-fill')[2].style.width = "90%";
+                document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ mit Zertifikat)";
+                document.querySelectorAll('.progress-label')[3].textContent = "C";
+                document.querySelectorAll('.progress-fill')[3].style.width = "80%";
+                document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ mit Zertifikat)";
                 document.querySelectorAll('.section_title')[1].textContent = "Elektronik & Hardware";
                 document.querySelectorAll('.section_info')[1].textContent = 
                     "- Arduino-Mikrocontroller-Projekte: Entwurf und Aufbau von Schaltkreisen mit Arduino, Arbeit mit verschiedenen Sensoren (z. B. Temperatur, Entfernung, Licht), um interaktive Projekte zu erstellen.";
@@ -258,10 +293,18 @@
                 languageSwitch.textContent = "Switch to German";
                 document.querySelector('.section_title').textContent = "Programming Skills";
                 document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Languages:</strong>`;
-                document.querySelectorAll('.progress-bar')[0].textContent = "HTML (80% with certificate)";
-                document.querySelectorAll('.progress-bar')[1].textContent = "Java (60-70%)";
-                document.querySelectorAll('.progress-bar')[2].textContent = "Python (90%+ with certificate)";
-                document.querySelectorAll('.progress-bar')[3].textContent = "C (80%+ with certificate)";
+                document.querySelectorAll('.progress-label')[0].textContent = "HTML";
+                document.querySelectorAll('.progress-fill')[0].style.width = "80%";
+                document.querySelectorAll('.progress-fill')[0].textContent = "(80% with certificate)";
+                document.querySelectorAll('.progress-label')[1].textContent = "Java";
+                document.querySelectorAll('.progress-fill')[1].style.width = "65%";
+                document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
+                document.querySelectorAll('.progress-label')[2].textContent = "Python";
+                document.querySelectorAll('.progress-fill')[2].style.width = "90%";
+                document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ with certificate)";
+                document.querySelectorAll('.progress-label')[3].textContent = "C";
+                document.querySelectorAll('.progress-fill')[3].style.width = "80%";
+                document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ with certificate)";
                 document.querySelectorAll('.section_title')[1].textContent = "Electronics & Hardware";
                 document.querySelectorAll('.section_info')[1].textContent = 
                     "- Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.";
@@ -270,7 +313,7 @@
                     "- Arduino: Small projects using BBWAS modules<br>- Java: Rock-Paper-Scissors with an analysis program";
                 document.querySelectorAll('.section_title')[3].textContent = "Miscellaneous";
                 document.querySelectorAll('.section_info')[3].innerHTML = 
-                    "<strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level";
+                    "< strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)";
             }
         });
     </script>
