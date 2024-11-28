@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nipun Golla - MERN Stack Developer</title>
+    <title>Nipun Golla - Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -38,6 +38,24 @@
         header p {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.8);
+        }
+
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #00f7ff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #030303;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .language-switch:hover {
+            background: #25afff;
         }
 
         section {
@@ -78,6 +96,20 @@
             margin-bottom: 20px;
         }
 
+        .progress-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            height: 20px;
+            border-radius: 5px;
+            background: #00f7ff;
+            transition: width 0.4s ease;
+        }
+
         footer {
             background: #02000a;
             padding: 20px;
@@ -115,7 +147,7 @@
             background: #00f7ff;
             transform: translate(-50%, -50%);
             transition: all 0.1s linear;
-            pointer-events: none;
+ pointer-events: none;
         }
     </style>
 </head>
@@ -123,50 +155,58 @@
 
     <header>
         <h1>Nipun Golla</h1>
-        <p>MERN Stack Developer</p>
+        <p>Developer</p>
+        <button class="language-switch" id="languageSwitch">Switch to German</button>
     </header>
 
+    <section id="content">
+        <h2 class="section_title">Programming Skills</h2>
+        <p class="section_info"><strong>Languages:</strong></p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 80%;">HTML (80% with certificate)</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 65%;">Java (60-70%)</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 90%;">Python (90%+ with certificate)</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 80%;">C (80%+ with certificate)</div>
+        </div>
+    </section>
+
     <section>
-        <h2 class="section_title">Informatikkenntnisse</h2>
-        <p class="section_info"><strong>Programmiersprachen:</strong><br>
-            - HTML (80% mit Zertifikat)<br>
-            - Java (60-70%)<br>
-            - Python (90%+ mit Zertifikat)<br>
-            - C (80%+ mit Zertifikat)
+        <h2 class="section_title">Electronics & Hardware</h2>
+        <p class="section_info">
+            - Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.
         </p>
     </section>
 
     <section>
-        <h2 class="section_title">Elektronik & Hardware</h2>
+        <h2 class="section_title">Projects</h2>
         <p class="section_info">
-            - Arduino-Mikrocontroller-Projekte: Entwurf und Aufbau von Schalt kreisen mit Arduino, Arbeit mit verschiedenen Sensoren (z. B. Temperatur, Entfernung, Licht), um interaktive Projekte zu erstellen.
+            - Arduino: Small projects using BBWAS modules<br>
+            - Java: Rock-Paper-Scissors with an analysis program
         </p>
     </section>
 
     <section>
-        <h2 class="section_title">Projekte</h2>
+        <h2 class="section_title">Miscellaneous</h2>
         <p class="section_info">
-            - Arduino: Kleine Projekte unter Verwendung der BBWAS-Module<br>
-            - Java: Rock-Paper-Scissors mit einem Analyseprogramm
-        </p>
-    </section>
-
-    <section>
-        <h2 class="section_title">Sonstiges</h2>
-        <p class="section_info">
-            <strong>Sprachen:</strong><br>
-            - Englisch (Zweitsprache)<br>
-            - Deutsch (C1)<br>
-            - Telugu (Muttersprache)<br>
-            - Französisch (A2)<br>
-            <strong>Staatsbürgerschaft:</strong> Britische Staatsbürgerschaft<br>
-            <strong>Qualifikationen:</strong> Qualifizierende IGCSE-Noten<br>
-            <strong>Deutschprüfung:</strong> C1-Niveau an der Kantonsschule Im Lee, durchgeführt von Herrn Timon Estapé. (Seine Nummer finden Sie hier als Referenz: 079 953 49 40 und seine E-Mail lautet timon.estape@edu.zh.ch)
+            <strong>Languages:</strong><br>
+            - English (Second Language)<br>
+            - German (C1)<br>
+            - Telugu (Native Language)<br>
+            - French (A2)<br>
+            <strong>Citizenship:</strong> British Citizenship<br>
+            <strong>Qualifications:</strong> Qualifying IGCSE grades<br>
+            <strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)
         </p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Nipun Golla. All rights reserved.</p>
+        <p>&copy; 2023 Nipun Golla. All rights reserved.</p>
     </footer>
 
     <div id="cursor_outer"></div>
@@ -175,6 +215,8 @@
     <script>
         const cursorOuter = document.getElementById('cursor_outer');
         const cursorInner = document.getElementById('cursor_inner');
+        const languageSwitch = document.getElementById('languageSwitch');
+        let isGerman = false;
 
         document.addEventListener('mousemove', (e) => {
             cursorOuter.style.top = `${e.clientY}px`;
@@ -191,6 +233,45 @@
         document.addEventListener('mouseleave', () => {
             cursorOuter.style.display = 'none';
             cursorInner.style.display = 'none';
+        });
+
+        languageSwitch.addEventListener('click', () => {
+            isGerman = !isGerman;
+            if (isGerman) {
+                languageSwitch.textContent = "Switch to English";
+                document.querySelector('.section_title').textContent = "Informatikkenntnisse";
+                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
+                document.querySelectorAll('.progress-bar')[0].textContent = "HTML (80% mit Zertifikat)";
+                document.querySelectorAll('.progress-bar')[1].textContent = "Java (60-70%)";
+                document.querySelectorAll('.progress-bar')[2].textContent = "Python (90%+ mit Zertifikat)";
+                document.querySelectorAll('.progress-bar')[3].textContent = "C (80%+ mit Zertifikat)";
+                document.querySelectorAll('.section_title')[1].textContent = "Elektronik & Hardware";
+                document.querySelectorAll('.section_info')[1].textContent = 
+                    "- Arduino-Mikrocontroller-Projekte: Entwurf und Aufbau von Schaltkreisen mit Arduino, Arbeit mit verschiedenen Sensoren (z. B. Temperatur, Entfernung, Licht), um interaktive Projekte zu erstellen.";
+                document.querySelectorAll('.section_title')[2].textContent = "Projekte";
+                document.querySelectorAll('.section_info')[2].innerHTML = 
+                    "- Arduino: Kleine Projekte unter Verwendung der BBWAS-Module<br>- Java: Rock-Paper-Scissors mit einem Analyseprogramm";
+                document.querySelectorAll('.section_title')[3].textContent = "Sonstiges";
+                document.querySelectorAll('.section_info')[3].innerHTML = 
+                    "<strong>Sprachen:</strong><br>- Englisch (Zweitsprache)<br>- Deutsch (C1)<br>- Telugu (Muttersprache)<br>- Französisch (A2)<br><strong>Staatsbürgerschaft:</strong> Britische Staatsbürgerschaft<br><strong>Qualifikationen:</strong> Qualifizierende IGCSE-Noten<br><strong>Deutschprüfung:</strong> C1-Niveau an der Kantonsschule Im Lee, durchgeführt von Herrn Timon Estapé. (Seine Nummer finden Sie hier als Referenz: 079 953 49 40 und seine E-Mail lautet timon.estape@edu.zh.ch)";
+            } else {
+                languageSwitch.textContent = "Switch to German";
+                document.querySelector('.section_title').textContent = "Programming Skills";
+                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Languages:</strong>`;
+                document.querySelectorAll('.progress-bar')[0].textContent = "HTML (80% with certificate)";
+                document.querySelectorAll('.progress-bar')[1].textContent = "Java (60-70%)";
+                document.querySelectorAll('.progress-bar')[2].textContent = "Python (90%+ with certificate)";
+                document.querySelectorAll('.progress-bar')[3].textContent = "C (80%+ with certificate)";
+                document.querySelectorAll('.section_title')[1].textContent = "Electronics & Hardware";
+                document.querySelectorAll('.section_info')[1].textContent = 
+                    "- Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.";
+                document.querySelectorAll('.section_title')[2].textContent = "Projects";
+                document.querySelectorAll('.section_info')[2].innerHTML = 
+                    "- Arduino: Small projects using BBWAS modules<br>- Java: Rock-Paper-Scissors with an analysis program";
+                document.querySelectorAll('.section_title')[3].textContent = "Miscellaneous";
+                document.querySelectorAll('.section_info')[3].innerHTML = 
+                    "<strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)";
+            }
         });
     </script>
 </body>
