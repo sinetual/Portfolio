@@ -150,7 +150,7 @@
             border-radius: 50%;
             border: 3px solid #00f7ff;
             box-shadow: 0px 0px 5px #00c3ff;
-            transform: translate(-50%, - 50%);
+            transform: translate(-50%, -50%);
             transition: all 0.225s linear;
             pointer-events: none;
         }
@@ -172,154 +172,154 @@
 </head>
 <body>
 
-    <header>
-        <h1>Nipun Golla</h1>
-        <p>Developer</p>
-        <button class="language-switch" id="languageSwitch">Switch to German</button>
-    </header>
+<header>
+    <h1>Nipun Golla</h1>
+    <p>Developer</p>
+    <button class="language-switch" id="languageSwitch">Switch to German</button>
+</header>
 
-    <section id="content">
-        <h2 class="section_title">Programming Skills</h2>
-        <p class="section_info"><strong>Languages:</strong></p>
-        <div class="progress-container">
-            <div class="progress-label">HTML</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 80%;">(80% with certificate)</div>
-            </div>
+<section id="content">
+    <h2 class="section_title">Programming Skills</h2>
+    <p class="section_info"><strong>Languages:</strong></p>
+    <div class="progress-container">
+        <div class="progress-label">HTML</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%;">(80% with certificate)</div>
         </div>
-        <div class="progress-container">
-            <div class="progress-label">Java</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 65%;">(60-70%)</div>
-            </div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-label">Java</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 65%;">(60-70%)</div>
         </div>
-        <div class="progress-container">
-            <div class="progress-label">Python</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 90%;">(90%+ with certificate)</div>
-            </div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-label">Python</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%;">(90%+ with certificate)</div>
         </div>
-        <div class="progress-container">
-            <div class="progress-label">C</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 80%;">(80%+ with certificate)</div>
-            </div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-label">C</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%;">(80%+ with certificate)</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <h2 class="section_title">Electronics & Hardware</h2>
-        <p class="section_info">
-            - Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.
-        </p>
-    </section>
+<section>
+    <h2 class="section_title">Electronics & Hardware</h2>
+    <p class="section_info">
+        - Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.
+    </p>
+</section>
 
-    <section>
-        <h2 class="section_title">Projects</h2>
-        <p class="section_info">
-            - Arduino: Small projects using BBWAS modules<br>
-            - Java: Rock-Paper-Scissors with an analysis program
-        </p>
-    </section>
+<section>
+    <h2 class="section_title">Projects</h2>
+    <p class="section_info">
+        - <a href="https://github.com/sinetual/Arduino/" target="_blank">Arduino</a>: Small projects using BBWAS modules<br>
+        - <a href="https://github.com/sinetual/Java/" target="_blank">Java</a>: Rock-Paper-Scissors with an analysis program
+    </p>
+</section>
 
-    <section>
-        <h2 class="section_title">Miscellaneous</h2>
-        <p class="section_info">
-            <strong>Languages:</strong><br>
-            - English (Second Language)<br>
-            - German (C1)<br>
-            - Telugu (Native Language)<br>
-            - French (A2)<br>
-            <strong>Citizenship:</strong> British Citizenship<br>
-            <strong>Qualifications:</strong> Qualifying IGCSE grades<br>
-            <strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)
-        </p>
-    </section>
+<section>
+    <h2 class="section_title">Miscellaneous</h2>
+    <p class="section_info">
+        <strong>Languages:</strong><br>
+        - English (Second Language)<br>
+        - German (C1)<br>
+        - Telugu (Native Language)<br>
+        - French (A2)<br>
+        <strong>Citizenship:</strong> British Citizenship<br>
+        <strong>Qualifications:</strong> Qualifying IGCSE grades<br>
+        <strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)
+    </p>
+</section>
 
-    <footer>
-        <p>&copy; 2023 Nipun Golla. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2023 Nipun Golla. All rights reserved.</p>
+</footer>
 
-    <div id="cursor_outer"></div>
-    <div id="cursor_inner"></div>
+<div id="cursor_outer"></div>
+<div id="cursor_inner"></div>
 
-    <script>
-        const cursorOuter = document.getElementById('cursor_outer');
-        const cursorInner = document.getElementById('cursor_inner');
-        const languageSwitch = document.getElementById('languageSwitch');
-        let isGerman = false;
+<script>
+    const cursorOuter = document.getElementById('cursor_outer');
+    const cursorInner = document.getElementById('cursor_inner');
+    const languageSwitch = document.getElementById('languageSwitch');
+    let isGerman = false;
 
-        document.addEventListener('mousemove', (e) => {
-            cursorOuter.style.top = `${e.clientY}px`;
-            cursorOuter.style.left = `${e.clientX}px`;
-            cursorInner.style.top = `${e.clientY}px`;
-            cursorInner.style.left = `${e.clientX}px`;
-        });
+    document.addEventListener('mousemove', (e) => {
+        cursorOuter.style.top = `${e.clientY}px`;
+        cursorOuter.style.left = `${e.clientX}px`;
+        cursorInner.style.top = `${e.clientY}px`;
+        cursorInner.style.left = `${e.clientX}px`;
+    });
 
-        document.addEventListener('mouseenter', () => {
-            cursorOuter.style.display = 'block';
-            cursorInner.style.display = 'block';
-        });
+    document.addEventListener('mouseenter', () => {
+        cursorOuter.style.display = 'block';
+        cursorInner.style.display = 'block';
+    });
 
-        document.addEventListener('mouseleave', () => {
-            cursorOuter.style.display = 'none';
-            cursorInner.style.display = 'none';
-        });
+    document.addEventListener('mouseleave', () => {
+        cursorOuter.style.display = 'none';
+        cursorInner.style.display = 'none';
+    });
 
-        languageSwitch.addEventListener('click', () => {
-            isGerman = !isGerman;
-            if (isGerman) {
-                languageSwitch.textContent = "Switch to English";
-                document.querySelector('.section_title').textContent = "Informatikkenntnisse";
-                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
-                document.querySelectorAll('.progress-label')[0].textContent = "HTML";
-                document.querySelectorAll('.progress-fill')[0].style.width = "80%";
-                document.querySelectorAll('.progress-fill')[0].textContent = "(80% mit Zertifikat)";
-                document.querySelectorAll('.progress-label')[1].textContent = "Java";
-                document.querySelectorAll('.progress-fill')[1].style.width = "65%";
-                document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
-                document.querySelectorAll('.progress-label')[2].textContent = "Python";
-                document.querySelectorAll('.progress-fill')[2].style.width = "90%";
-                document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ mit Zertifikat)";
-                document.querySelectorAll('.progress-label')[3].textContent = "C";
-                document.querySelectorAll('.progress-fill')[3].style.width = "80%";
-                document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ mit Zertifikat)";
-                document.querySelectorAll('.section_title')[1].textContent = "Elektronik & Hardware";
-                document.querySelectorAll('.section_info')[1].textContent = 
-                    "- Arduino-Mikrocontroller-Projekte: Entwurf und Aufbau von Schaltkreisen mit Arduino, Arbeit mit verschiedenen Sensoren (z. B. Temperatur, Entfernung, Licht), um interaktive Projekte zu erstellen.";
-                document.querySelectorAll('.section_title')[2].textContent = "Projekte";
-                document.querySelectorAll('.section_info')[2].innerHTML = 
-                    "- Arduino: Kleine Projekte unter Verwendung der BBWAS-Module<br>- Java: Rock-Paper-Scissors mit einem Analyseprogramm";
-                document.querySelectorAll('.section_title')[3].textContent = "Sonstiges";
-                document.querySelectorAll('.section_info')[3].innerHTML = 
-                    "<strong>Sprachen:</strong><br>- Englisch (Zweitsprache)<br>- Deutsch (C1)<br>- Telugu (Muttersprache)<br>- Französisch (A2)<br><strong>Staatsbürgerschaft:</strong> Britische Staatsbürgerschaft<br><strong>Qualifikationen:</strong> Qualifizierende IGCSE-Noten<br><strong>Deutschprüfung:</strong> C1-Niveau an der Kantonsschule Im Lee, durchgeführt von Herrn Timon Estapé. (Seine Nummer finden Sie hier als Referenz: 079 953 49 40 und seine E-Mail lautet timon.estape@edu.zh.ch)";
-            } else {
-                languageSwitch.textContent = "Switch to German";
-                document.querySelector('.section_title').textContent = "Programming Skills";
-                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Languages:</strong>`;
-                document.querySelectorAll('.progress-label')[0].textContent = "HTML";
-                document.querySelectorAll('.progress-fill')[0].style.width = "80%";
-                document.querySelectorAll('.progress-fill')[0].textContent = "(80% with certificate)";
-                document.querySelectorAll('.progress-label')[1].textContent = "Java";
-                document.querySelectorAll('.progress-fill')[1].style.width = "65%";
-                document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
-                document.querySelectorAll('.progress-label')[2].textContent = "Python";
-                document.querySelectorAll('.progress-fill')[2].style.width = "90%";
-                document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ with certificate)";
-                document.querySelectorAll('.progress-label')[3].textContent = "C";
-                document.querySelectorAll('.progress-fill')[3].style.width = "80%";
-                document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ with certificate)";
-                document.querySelectorAll('.section_title')[1].textContent = "Electronics & Hardware";
-                document.querySelectorAll('.section_info')[1].textContent = 
-                    "- Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.";
-                document.querySelectorAll('.section_title')[2].textContent = "Projects";
-                document.querySelectorAll('.section_info')[2].innerHTML = 
-                    "- Arduino: Small projects using BBWAS modules<br>- Java: Rock-Paper-Scissors with an analysis program";
-                document.querySelectorAll('.section_title')[3].textContent = "Miscellaneous";
-                document.querySelectorAll('.section_info')[3].innerHTML = 
-                    "<strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)";
-            }
-        });
-    </script>
+    languageSwitch.addEventListener('click', () => {
+        isGerman = !isGerman;
+        if (isGerman) {
+            languageSwitch.textContent = "Switch to English";
+            document.querySelector('.section_title').textContent = "Informatikkenntnisse";
+            document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
+            document.querySelectorAll('.progress-label')[0].textContent = "HTML";
+            document.querySelectorAll('.progress-fill')[0].style.width = "80%";
+            document.querySelectorAll('.progress-fill')[0].textContent = "(80% mit Zertifikat)";
+            document.querySelectorAll('.progress-label')[1].textContent = "Java";
+            document.querySelectorAll('.progress-fill')[1].style.width = "65%";
+            document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
+            document.querySelectorAll('.progress-label')[2].textContent = "Python";
+            document.querySelectorAll('.progress-fill')[2].style.width = "90%";
+            document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ mit Zertifikat)";
+            document.querySelectorAll('.progress-label')[3].textContent = "C";
+            document.querySelectorAll('.progress-fill')[3].style.width = "80%";
+            document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ mit Zertifikat)";
+            document.querySelectorAll('.section_title')[1].textContent = "Elektronik & Hardware";
+            document.querySelectorAll('.section_info')[1].textContent =
+                "- Arduino-Mikrocontroller-Projekte: Entwurf und Aufbau von Schaltkreisen mit Arduino, Arbeit mit verschiedenen Sensoren (z. B. Temperatur, Entfernung, Licht), um interaktive Projekte zu erstellen.";
+            document.querySelectorAll('.section_title')[2].textContent = "Projekte";
+            document.querySelectorAll('.section_info')[2].innerHTML =
+                "- Arduino: Kleine Projekte unter Verwendung der BBWAS-Module<br>- Java: Rock-Paper-Scissors mit einem Analyseprogramm";
+            document.querySelectorAll('.section_title')[3].textContent = "Sonstiges";
+            document.querySelectorAll('.section_info')[3].innerHTML =
+                "<strong>Sprachen:</strong><br>- Englisch (Zweitsprache)<br>- Deutsch (C1)<br>- Telugu (Muttersprache)<br>- Französisch (A2)<br><strong>Staatsbürgerschaft:</strong> Britische Staatsbürgerschaft<br><strong>Qualifikationen:</strong> Qualifizierende IGCSE-Noten<br><strong>Deutschprüfung:</strong> C1-Niveau an der Kantonsschule Im Lee, durchgeführt von Herrn Timon Estapé. (Seine Nummer finden Sie hier als Referenz: 079 953 49 40 und seine E-Mail lautet timon.estape@edu.zh.ch)";
+        } else {
+            languageSwitch.textContent = "Switch to German";
+            document.querySelector('.section_title').textContent = "Programming Skills";
+            document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Languages:</strong>`;
+            document.querySelectorAll('.progress-label')[0].textContent = "HTML";
+            document.querySelectorAll('.progress-fill')[0].style.width = "80%";
+            document.querySelectorAll('.progress-fill')[0].textContent = "(80% with certificate)";
+            document.querySelectorAll('.progress-label')[1].textContent = "Java";
+            document.querySelectorAll('.progress-fill')[1].style.width = "65%";
+            document.querySelectorAll('.progress-fill')[1].textContent = "(60-70%)";
+            document.querySelectorAll('.progress-label')[2].textContent = "Python";
+            document.querySelectorAll('.progress-fill')[2].style.width = "90%";
+            document.querySelectorAll('.progress-fill')[2].textContent = "(90%+ with certificate)";
+            document.querySelectorAll('.progress-label')[3].textContent = "C";
+            document.querySelectorAll('.progress-fill')[3].style.width = "80%";
+            document.querySelectorAll('.progress-fill')[3].textContent = "(80%+ with certificate)";
+            document.querySelectorAll('.section_title')[1].textContent = "Electronics & Hardware";
+            document.querySelectorAll('.section_info')[1].textContent =
+                "- Arduino microcontroller projects: Designing and building circuits with Arduino, working with various sensors (e.g., temperature, distance, light) to create interactive projects.";
+            document.querySelectorAll('.section_title')[2].textContent = "Projects";
+            document.querySelectorAll('.section_info')[2].innerHTML =
+                "- Arduino: Small projects using BBWAS modules<br>- Java: Rock-Paper-Scissors with an analysisprogram";
+            document.querySelectorAll('.section_title')[3].textContent = "Miscellaneous";
+            document.querySelectorAll('.section_info')[3].innerHTML =
+                "<strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level";
+        }
+    });
+</script>
 </body>
 </html>
