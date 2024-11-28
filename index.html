@@ -121,7 +121,11 @@
         .progress-fill {
             height: 100%;
             border-radius: 5px;
-            background: #00f7ff;
+            background: white; /* Change to white */
+            color: black; /* Change text color to black */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: width 0.4s ease;
         }
 
@@ -146,14 +150,14 @@
             border-radius: 50%;
             border: 3px solid #00f7ff;
             box-shadow: 0px 0px 5px #00c3ff;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, - 50%);
             transition: all 0.225s linear;
             pointer-events: none;
         }
 
         #cursor_inner {
             position: fixed;
-            top: -9999 px;
+            top: -9999px;
             left: -9999px;
             z-index: 9999;
             width: 10px;
@@ -267,7 +271,7 @@
             if (isGerman) {
                 languageSwitch.textContent = "Switch to English";
                 document.querySelector('.section_title').textContent = "Informatikkenntnisse";
-                document .querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
+                document.querySelectorAll('.section_info')[0].innerHTML = `<strong>Programmiersprachen:</strong>`;
                 document.querySelectorAll('.progress-label')[0].textContent = "HTML";
                 document.querySelectorAll('.progress-fill')[0].style.width = "80%";
                 document.querySelectorAll('.progress-fill')[0].textContent = "(80% mit Zertifikat)";
@@ -313,7 +317,7 @@
                     "- Arduino: Small projects using BBWAS modules<br>- Java: Rock-Paper-Scissors with an analysis program";
                 document.querySelectorAll('.section_title')[3].textContent = "Miscellaneous";
                 document.querySelectorAll('.section_info')[3].innerHTML = 
-                    "< strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)";
+                    "<strong>Languages:</strong><br>- English (Second Language)<br>- German (C1)<br>- Telugu (Native Language)<br>- French (A2)<br><strong>Citizenship:</strong> British Citizenship<br><strong>Qualifications:</strong> Qualifying IGCSE grades<br><strong>German Exam:</strong> C1 level at Kantonsschule Im Lee, conducted by Mr. Timon Estapé. (His number for reference: 079 953 49 40 and his email is timon.estape@edu.zh.ch)";
             }
         });
     </script>
